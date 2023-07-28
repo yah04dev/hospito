@@ -18,4 +18,4 @@ python app.py
 the terminal will show you the server link
 to login the first time and to be able to add staff you need to use the admin account
 username:1 / password:1
-you can change who is the admin by change the staff id on line 18 on the app.py file
+you can change who is the admin by change the staff id on line 17 on the app.py file
