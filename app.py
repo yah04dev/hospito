@@ -2,6 +2,19 @@ from flask import redirect,url_for,Flask, request,render_template,make_response
 import sqlite3
 
 app = Flask(__name__)
+@app.route('/efindo') 
+def efindo():
+     EID = request.cookies.get('EID')
+     EID=str(EID)
+     if EID=="1" or EID==1 or EID=="1" :
+       con = sqlite3.connect("db.db")
+       eid = request.args.get('eid')
+       cur = con.cursor()
+       cur.execute("SELECT * FROM empl WHERE eid=(?)",[eid])
+       rows=list(cur.fetchall())
+       rows=rows[0]
+       return render_template('efindo.html',rows=rows)
+     else:return redirect(url_for("login"))
 
 
 @app.route('/addcl') 
