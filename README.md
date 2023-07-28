@@ -19,3 +19,7 @@ the terminal will show you the server link
 to login the first time and to be able to add staff you need to use the admin account
 username:1 / password:1
 you can change who is the admin by change the staff id on line 17 on the app.py file
+## observation
+the staff id is printed at the bottom of the staff card
+consultation id is printed at the bottom of the prescription
+client id is printed at the bottom of the client card
