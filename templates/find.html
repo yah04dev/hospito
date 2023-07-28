@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<a href="/dhome">HOME</a>
+<form method="GET" action="/findo">
+  <label>id clent</label>
+  <input type="number" name="cid" required >
+  <input type="submit" value="find">
+</form>
+<p>full name :{{name}}</p>
+<p>dob :{{dob}}</p>
+<p>tel :0{{tel}}</p>
+<p>iobs :{{iobs}}</p>
+
+</table>
+
+
+<table>
+ <thead>
+            <tr>
+     <th>consultations</th>    
+ 	        <th>&nbsp;</th>    
+                <th>radios and analysis</th>  
+
+            </tr>
+        </thead>
+<tr>
+<td>
+<table>
+        <thead>
+            <tr>
+ 	         	        <th>department</th>    
+ 	        <th>date</th>    
+                <th>view</th>  
+            </tr>
+        </thead>
+        <tbody>
+
+{% set len2 = ((considlist|length)+1)|int %}
+{% set deplist = deplist[::-1] %}
+{% set doclist = doclist[::-1] %}
+{% set considlist = considlist[::-1] %}
+
+            {% for i in range(len2) %}
+<tr>
+    {% if deplist[i] and (deplist[i])|length > 0 %}
+    <td>{{ deplist[i][0] }}</td>
+    {% endif %}
+               
+
+
+    {% if doclist[i] and (doclist[i])|length > 0 %}
+    <td>{{ doclist[i][0] }}</td>
+    {% endif %}
+
+    {% if considlist[i] and (considlist[i])|length > 0 %}
+    <td><a href="consview?consid={{ considlist[i][0] }}">view</a></td>
+    {% endif %}
+</tr>
+            {% endfor %}
+
+
+
+        </tbody>
+    </table>
+          
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top; text-align: center;">
+<table>
+        <thead>
+            <tr>
+ 	        <th>type</th>    
+ 	        <th>date</th>    
+                <th>view</th>  
+            </tr>
+        </thead>
+        <tbody>
+{% set len1 = ((analid|length)+1)|int %}
+{% set atype = atype[::-1] %}
+{% set dateofan = dateofan[::-1] %}
+{% set analid = analid[::-1] %}
+
+            {% for i in range(len1) %}
+<tr>
+    {% if atype[i] and (atype[i])|length > 0 %}
+    <td>{{ atype[i][0] }}</td>
+    {% endif %}
+               
+
+
+    {% if dateofan[i] and (dateofan[i])|length > 0 %}
+    <td>{{ dateofan[i][0] }}</td>
+    {% endif %}
+
+    {% if analid[i] and (analid[i])|length > 0 %}
+    <td><a href="cons?consid={{ analid[i][0] }}">view</a></td>
+    {% endif %}
+</tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+</td>
+</tr>
+</table>
+</body>
+</html>

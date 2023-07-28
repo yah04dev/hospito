@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<a href="/dhome">HOME</a>
+<form method="get" action="/sinsertion">
+
+  <label>full name</label>
+  <input type="text" name="ename" required >
+</br>
+  <label>DOB</label>
+  <input type="date" name="edob" required>
+</br>
+  <label>Ntel</label>
+  <input type="number" name="etel" >
+</br>
+  <label>type</label>
+<select  name="etype">
+  <option value="dr">dr</option>
+  <option value="grh" >grh</option>
+  <option value="laborat">laboratoiriste</option>
+  <option value="radiol" >radiologue</option>
+
+</select>
+</br>
+<label>sous type</label>
+  <input type="text" name="esubtype"  >
+</br>
+<label>date of join</label>
+  <input type="date" name="edoj" >
+</br>
+
+  <label>Numero d assurance</label>
+  <input type="number" name="nsc" >
+</br>
+  <label>Numero didentite national</label>
+  <input type="number" name="nid" >
+</br>
+<label>adress</label>
+  <input type="text" name="adress"  >
+</br>
+ <label>Rhesus</label>
+<select id="monselect" name="rh">
+  <option value="a+">A+</option>
+  <option value="a-" >A-</option>
+  <option value="o+">O+</option>
+  <option value="o-" >O-</option>
+  <option value="b+">B+</option>
+  <option value="b-" >B-</option>
+  <option value="ab+">AB+</option>
+  <option value="ab-" >AB-</option>
+</select>
+</br>
+<label>motdepass</label>
+  <input type="mtp" name="mtp"  >
+</br>
+  
+</br>
+  <input type="submit" value="insert">
+</form>
+
+</body>
+</html>

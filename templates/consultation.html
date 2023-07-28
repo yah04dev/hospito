@@ -1,0 +1,1023 @@
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<a href="/dhome">HOME</a>
+<form method="get" action="/coinsertion">
+<table>
+<tr>
+<th>
+  <label>id client </label>
+  <input type="number" name="cid" required >
+</br>
+  <label>id docteur</label>
+  <input type="number" name="did" value="{{EID}}" required>
+</br>
+ <label>department</label><select name="dep">
+  <option value=""></option>
+  <option value="urgences">urgences</option>
+  <option value="maternité">maternité</option>
+  <option value="pédiatrie">pédiatrie</option>
+  <option value="médecine interne">médecine interne</option>
+  <option value="chirurgie">chirurgie</option>
+  <option value="radiologie">radiologie</option>
+  <option value="laboratoire">laboratoire</option>
+  <option value="pharmacie">pharmacie</option>
+  <option value="nutrition">nutrition</option>
+  <option value="soins infirmiers">soins infirmiers</option>
+  <option value="accueil">accueil</option>
+  <option value="anesthésie">anesthésie</option>
+  <option value="cardiologie">cardiologie</option>
+  <option value="chirurgie cardiaque">chirurgie cardiaque</option>
+  <option value="chirurgie orthopédique">chirurgie orthopédique</option>
+  <option value="chirurgie plastique">chirurgie plastique</option>
+  <option value="dermatologie">dermatologie</option>
+  <option value="endocrinologie">endocrinologie</option>
+  <option value="gastro-entérologie">gastro-entérologie</option>
+  <option value="hématologie">hématologie</option>
+  <option value="infectiologie">infectiologie</option>
+  <option value="neurologie">neurologie</option>
+  <option value="oncologie">oncologie</option>
+  <option value="ophtalmologie">ophtalmologie</option>
+  <option value="oto-rhino-laryngologie">oto-rhino-laryngologie</option>
+  <option value="psychiatrie">psychiatrie</option>
+  <option value="rhumatologie">rhumatologie</option>
+  <option value="urologie">urologie</option>
+</select> 
+</br>
+  <input type="date" id="dateInput" name="doc">
+  
+  <script>
+    // Get the current date
+    var today = new Date();
+
+    // Format the date as yyyy-mm-dd
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var formattedDate = yyyy + '-' + mm + '-' + dd;
+
+    // Set the value of the date input field
+    document.getElementById('dateInput').value = formattedDate;
+  </script>
+</br>
+<table>
+<tr>
+<th>
+  <label>important details</label>
+</th>
+</tr>
+<tr>
+<th>
+  <textarea id="cobs" name="cobs" rows="10" cols="70"></textarea>
+</th>
+</tr>
+</table>
+
+
+
+
+</br>
+
+</th>
+
+</tr>
+<tr>
+
+<th>
+<table>
+<tr>
+<th>
+<h4>ordanance</h4>
+
+
+
+ <label>1</label><select name="med1" id="med1">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>2</label><select name="med2" id="med2">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>3</label><select name="med3" id="med3">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>4</label><select name="med4" id="med4">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>5</label><select name="med5" id="med5">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>6</label><select name="med6" id="med6">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>7</label><select name="med7" id="med7">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>8</label><select name="med8" id="med8">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>9</label><select name="med9" id="med9">
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</br>
+ <label>10</label><select name="med10" id="med10">  
+  <option value=""></option>
+<option value="Doliprane">Doliprane</option>
+  <option value="Efferalgan">Efferalgan</option>
+  <option value="Paracétamol Biogaran">Paracétamol Biogaran</option>
+  <option value="Nurofen">Nurofen</option>
+  <option value="Advil">Advil</option>
+  <option value="Ibuprofène Biogaran">Ibuprofène Biogaran</option>
+  <option value="Aspirine">Aspirine</option>
+  <option value="Clarityne">Clarityne</option>
+  <option value="Zyrtec">Zyrtec</option>
+  <option value="Aerius">Aerius</option>
+  <option value="Amoxil">Amoxil</option>
+  <option value="Augmentin">Augmentin</option>
+  <option value="Cipro">Cipro</option>
+  <option value="Vicks">Vicks</option>
+  <option value="Robitussin">Robitussin</option>
+  <option value="Strepsils">Strepsils</option>
+  <option value="Sudafed">Sudafed</option>
+  <option value="DayQuil">DayQuil</option>
+  <option value="NyQuil">NyQuil</option>
+  <option value="Tums">Tums</option>
+  <option value="Rolaids">Rolaids</option>
+  <option value="Maalox">Maalox</option>
+  <option value="Losartan">Losartan</option>
+  <option value="Valsartan">Valsartan</option>
+  <option value="Amlodipine">Amlodipine</option>
+  <option value="Atenolol">Atenolol</option>
+  <option value="Propranolol">Propranolol</option>
+  <option value="Metoprolol">Metoprolol</option>
+  <option value="Metformin">Metformin</option>
+  <option value="Gliclazide">Gliclazide</option>
+  <option value="Glipizide">Glipizide</option>
+  <option value="Atorvastatin">Atorvastatin</option>
+  <option value="Rosuvastatin">Rosuvastatin</option>
+  <option value="Simvastatin">Simvastatin</option>
+  <option value="Salbutamol">Salbutamol</option>
+  <option value="Terbutaline">Terbutaline</option>
+  <option value="Formoterol">Formoterol</option>
+  <option value="Diclofenac">Diclofenac</option>
+  <option value="Ibuprofen">Ibuprofen</option>
+  <option value="Naproxen">Naproxen</option>
+  <option value="Cisplatin">Cisplatin</option>
+  <option value="Carboplatin">Carboplatin</option>
+  <option value="Paclitaxel">Paclitaxel</option>
+  <option value="Zidovudine">Zidovudine</option>
+  <option value="Lamivudine">Lamivudine</option>
+  <option value="Abacavir">Abacavir</option>
+  <option value="Sofosbuvir">Sofosbuvir</option>
+  <option value="Ledipasvir">Ledipasvir</option>
+  <option value="Velpatasvir">Velpatasvir</option>
+</select> 
+</th>
+<th style="width:70px">
+<h4>&nbsp;</h4>
+
+  <label>1</label>  <input type="text" name="dose1" style="width:80%" >
+</br>
+
+   <label>2</label>   <input type="text" name="dose2" style="width:80%" >
+</br>
+
+   <label>3</label> <input type="text" name="dose3"  style="width:80%" >
+</br>
+
+  <label>4</label> <input type="text" name="dose4" style="width:80%" >
+</br>
+
+  <label>5</label><input type="text" name="dose5"style="width:80%"   >
+</br>
+
+  <label>6</label><input type="text" name="dose6" style="width:80%" >
+</br>
+  <label>7</label><input type="text" name="dose7"  style="width:80%" >
+</br>
+
+  <label>8</label><input type="text" name="dose8" style="width:80%" >
+</br>
+
+  <label>9</label><input type="text" name="dose9" style="width:80%"  >
+</br>
+  <label>10</label><input type="text" name="dose10"  style="width:70%">
+</br>
+</th>
+<th><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></th>
+<th>
+
+<h4>analyses et radios</h4>
+ <label>1</label><select name="ana1" id="ana1">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+
+ <label>2</label><select name="ana2" id="ana2">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+
+</select> 
+</br>
+ <label>3</label><select name="ana3" id="ana3">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>4</label><select name="ana4" id="ana4">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>5</label><select name="ana5" id="ana5">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>6</label><select name="ana6" id="ana6">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>7</label><select name="ana7" id="ana7">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>8</label><select name="ana8" id="ana8">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>9</label><select name="ana9" id="ana9">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+</br>
+ <label>10</label><select name="ana10" id="ana10">
+  <option value=""></option>
+ <option value="CBC">Numération globulaire complète (CBC)</option>
+  <option value="Urine test">Test d'urine</option>
+  <option value="Liver function test">Test de la fonction hépatique</option>
+  <option value="Renal function test">Test de la fonction rénale</option>
+  <option value="Triglyceride test">Test des triglycérides</option>
+  <option value="Cholesterol test">Test du cholestérol</option>
+  <option value="Blood sugar test">Test de la glycémie</option>
+  <option value="Vitamin D test">Test de la vitamine D</option>
+  <option value="Thyroid test">Test de la thyroïde</option>
+  <option value="Antibody test">Test des anticorps</option>
+  <option value="Hormone test">Test des hormones</option>
+  <option value="Bacterial infection test">Test d'infection bactérienne</option>
+  <option value="Viral infection test">Test d'infection virale</option>
+  <option value="Fungal infection test">Test d'infection fongique</option>
+  <option value="Genetic disease blood test">Test de sang pour détecter les maladies génétiques</option>
+  <option value="Urine test for genetic diseases">Test d'urine pour détecter les maladies génétiques</option>
+  <option value="Stool test for genetic diseases">Test de selles pour détecter les maladies génétiques</option>
+
+  <option value="X-ray">Radiographie</option>
+  <option value="CT scan">Tomographie par ordinateur (TDM)</option>
+  <option value="MRI">Imagerie par résonance magnétique (IRM)</option>
+  <option value="Ultrasound">Échographie</option>
+  <option value="Mammogram">Mamographie</option>
+  <option value="Heart X-ray">Radiographie cardiaque</option>
+  <option value="Angiography">Angiographie</option>
+  <option value="Upper GI imaging">Imagerie de l'appareil digestif supérieur (EDS)</option>
+  <option value="Lower GI imaging">Imagerie de l'appareil digestif inférieur (EDI)</option>
+  <option value="Brain CT scan">Tomographie par ordinateur du cerveau</option>
+  <option value="Spine CT scan">Tomographie par ordinateur de la colonne vertébrale</option>
+  <option value="Legs CT scan">Tomographie par ordinateur des jambes</option>
+  <option value="Arms CT scan">Tomographie par ordinateur des bras</option>
+</select> 
+
+</th>
+</tr>
+</table>
+</br>
+</br>
+  <input type="submit" value="insertion">
+
+
+
+</form>
+</body>
+</html>

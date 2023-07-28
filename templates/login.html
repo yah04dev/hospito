@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+</br>
+</br>
+</br>
+</br>
+<center>
+<h4>login</h4>
+  <form action="/checko" method="GET">
+    <label for="cid">id:</label>
+    <input type="text" id="sid" name="sid"><br><br>
+    <label for="cid">password:</label>
+    <input type="password" id="pass" name="pass"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>La carte</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <!-- Your HTML content here -->
+<a href="/dhome">HOME</a>
+<div id="content" >
+<table width="100%" height="40%" style="border-color: black; border: 5px solid ;">
+<tr>
+<td width="40%" height="40%" style="border-color: red; border: 2px solid ;">
+<center><p >photo</p></center>
+</td>
+<td>
+<center><h3>clinique taher</h3></center>
+<p>full name : {{rows[0][1]}}</p>
+<p>date of birth : {{rows[0][2]}}</p>
+<p>type:{{rows[0][4]}}&nbsp{{rows[0][5]}}</p>
+<table>
+<tr>
+<td>
+<p>RH:{{rows[0][11]}}</p>
+</td>
+<td>
+<svg id="barcode"></svg>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+</div>
+
+
+
+
+  <script>
+
+    window.onload = function() {
+      const content = document.getElementById('content');
+      const opt = {
+        margin: 1,
+        filename: 'output.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a7', orientation: 'landscape' }
+      };
+	JsBarcode("#barcode", "{{rows[0][0]}}",{
+
+  width: 4,
+  height: 25,
+
+});
+      html2pdf().from(content).set(opt).save();
+
+
+    }
+  </script>
+</body>
+</html>

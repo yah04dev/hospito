@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<a href="/dhome">HOME</a>
+<form method="get" action="/insertion">
+  <label>by:</label>
+  <input type="text" name="eid" value="{{EID}}" required >
+</br>
+  <label>full name</label>
+  <input type="text" name="name" required >
+</br>
+  <label>DOB</label>
+  <input type="date" name="dob" required>
+</br>
+  <label>Ntel</label>
+  <input type="number" name="tel" >
+</br>
+  <label>Rhesus</label>
+<select id="monselect" name="rh">
+  <option value="a+">A+</option>
+  <option value="a-" >A-</option>
+  <option value="o+">O+</option>
+  <option value="o-" >O-</option>
+  <option value="b+">B+</option>
+  <option value="b-" >B-</option>
+  <option value="ab+">AB+</option>
+  <option value="ab-" >AB-</option>
+</select>
+</br>
+  <p>important details</p>
+
+  <textarea name="iobs" required rows="10" cols="70"></textarea>
+</br>
+  <input type="submit" value="insert">
+</form>
+
+</body>
+</html>

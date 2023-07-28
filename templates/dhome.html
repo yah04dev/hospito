@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</head>
+<body>
+</br>
+</br>
+<center>
+<table>
+<tr>
+<td >
+  <a href="/consultation"><h5>consultation</h5></a><br><br>
+  <a href="/addar"><h5>ajouter analyse ou radio</h5></a><br><br>
+  <a href="/addcl"><h5>ajouter un client</h5></a><br><br>
+  <a href="/addstaff"><h5>ajouter un staff</h5></a><br><br>
+  <a href="/"><h5 style="color:red;">logout</h5></a><br><br>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td style="border: 5px solid black;">
+ <center> <h4>trouver un client :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></center>
+</br>
+</br>
+
+  <form action="/findo" method="GET">
+    <label for="cid">id:</label>
+
+    <input type="text" id="cid" name="cid">
+</br></br></br>
+  <center>  <input type="submit" value="Submit"></center>
+</td>
+</tr>
+</table>
+</center>
+</form>
+</body>
+</html>
