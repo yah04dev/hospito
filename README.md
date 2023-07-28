@@ -17,10 +17,10 @@ python app.py
 ```
 the terminal will show you the server link
 ## Login
-the server link will redirect always to the login page to login the first time and to be able to add staff you need to use the admin account
-username:1 / password:1
+the server link will redirect always to the login page to login the first time and to be able to add staff you need to use the admin account<br />
+username:1 / password:1<br />
 you can change who is the admin (create and see all details about staff and can do any other work) by change the staff id on line 9 and 30 on the app.py file
 ## observation
-the staff id is printed at the bottom of the staff card
-consultation id is printed at the bottom of the prescription
+the staff id is printed at the bottom of the staff card<br />
+consultation id is printed at the bottom of the prescription<br />
 client id is printed at the bottom of the client card
