@@ -27,7 +27,7 @@ def addcl():
 def addstaff():
      EID = request.cookies.get('EID')
      EID=str(EID)
-     if EID=="1" or EID==1 or EID=="1" :return render_template('addstaff.html',EID=EID)
+     if EID=="1" or EID==1 :return render_template('addstaff.html',EID=EID)
      else:return redirect(url_for("login"))
 @app.route('/') 
 def login():
@@ -85,17 +85,26 @@ def cartei():
      cur2.execute("SELECT * FROM clients WHERE cid=(?)",[cid])
      rows = list(cur2.fetchall())
      if EID=="" or EID==0 or EID=="0" or EID=="None":return redirect(url_for("login"))
-     else:return render_template('cartei.html',rows=rows)
+     else:return render_template('carte.html',rows=rows)
 @app.route('/scarte')
 def scarte():
+     EID = request.cookies.get('EID')
+     eid = request.args.get('eid')
+     con = sqlite3.connect("db.db")
+     cur2=con.cursor()
+     cur2.execute("SELECT * FROM clients WHERE eid=(?)",[eid])
+     rows = list(cur2.fetchall())
+     if EID=="" or EID==0 or EID=="0" or EID=="None":return redirect(url_for("login"))
+     else:return render_template('scarte.html',rows=rows)
+@app.route('/scartei')
+def scartei():
      EID = request.cookies.get('EID')
      con = sqlite3.connect("db.db")
      cur2=con.cursor()
      cur2.execute("SELECT * FROM empl ORDER BY eid DESC LIMIT 1;")
      rows = list(cur2.fetchall())
-     if EID=="" or EID==0 or EID=="0" or EID=="None":return redirect(url_for("login"))
-     else:return render_template('scarte.html',rows=rows)
-     
+     if EID==1 or EID=="1":return render_template('scarte.html',rows=rows)
+     else:return redirect(url_for("login"))    
 @app.route('/ordanance')
 def ordanance():
      con = sqlite3.connect("db.db")
@@ -231,6 +240,7 @@ def findo():
     cur5 = con.cursor()
     cur6 = con.cursor()
     cur8 = con.cursor()
+    cur9 = con.cursor()
     cur.execute("SELECT name FROM clients WHERE cid=(?)",[cid])
     cur1.execute("SELECT dob FROM clients WHERE cid=(?)",[cid])
     cur2.execute("SELECT tel FROM clients WHERE cid=(?)",[cid])
@@ -239,11 +249,12 @@ def findo():
     cur5.execute("SELECT aval FROM anal WHERE cid=(?)",[cid])
     cur6.execute("SELECT dateofan FROM anal WHERE cid=(?)",[cid])
     cur8.execute("SELECT analid FROM anal WHERE cid=(?)",[cid])
+    cur9.execute("SELECT rh FROM clients WHERE cid=(?)",[cid])
     name=cur.fetchone()[0]
     dob=cur1.fetchone()[0]
     tel=cur2.fetchone()[0]
     iobs=cur3.fetchone()[0]
-
+    rh=cur9.fetchone()[0]
     atype=cur4.fetchall()
     aval=cur5.fetchall()
     dateofan=cur6.fetchall()
@@ -259,7 +270,7 @@ def findo():
     deplist=cur33.fetchall()
     doclist=cur11.fetchall()
     considlist=cur22.fetchall()
-    return render_template('find.html',cid=cid,atype=atype,dateofan=dateofan,analid=analid,name=name,dob=dob,tel=tel,iobs=iobs,deplist=deplist,doclist=doclist,considlist=considlist,)
+    return render_template('find.html',rh=rh,cid=cid,atype=atype,dateofan=dateofan,analid=analid,name=name,dob=dob,tel=tel,iobs=iobs,deplist=deplist,doclist=doclist,considlist=considlist,)
 @app.route('/consview')
 def consview():
     consid = request.args.get('consid')
@@ -269,5 +280,9 @@ def consview():
     rows = list(cur.fetchall())
 
     return render_template("consview.html",rows=rows,)
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect(url_for("dhome")), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
