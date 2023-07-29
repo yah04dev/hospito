@@ -14,7 +14,7 @@ def efindo():
        rows=list(cur.fetchall())
        rows=rows[0]
        return render_template('efindo.html',rows=rows)
-     else:return redirect(url_for("login"))
+     else:return redirect(url_for("dhome"))
 
 
 @app.route('/addcl') 
@@ -76,6 +76,16 @@ def carte():
      rows = list(cur2.fetchall())
      if EID=="" or EID==0 or EID=="0" or EID=="None":return redirect(url_for("login"))
      else:return render_template('carte.html',rows=rows)
+@app.route('/cartei')
+def cartei():
+     EID = request.cookies.get('EID')
+     cid = request.args.get('cid')
+     con = sqlite3.connect("db.db")
+     cur2=con.cursor()
+     cur2.execute("SELECT * FROM clients WHERE cid=(?)",[cid])
+     rows = list(cur2.fetchall())
+     if EID=="" or EID==0 or EID=="0" or EID=="None":return redirect(url_for("login"))
+     else:return render_template('cartei.html',rows=rows)
 @app.route('/scarte')
 def scarte():
      EID = request.cookies.get('EID')
@@ -249,7 +259,7 @@ def findo():
     deplist=cur33.fetchall()
     doclist=cur11.fetchall()
     considlist=cur22.fetchall()
-    return render_template('find.html',atype=atype,dateofan=dateofan,analid=analid,name=name,dob=dob,tel=tel,iobs=iobs,deplist=deplist,doclist=doclist,considlist=considlist,)
+    return render_template('find.html',cid=cid,atype=atype,dateofan=dateofan,analid=analid,name=name,dob=dob,tel=tel,iobs=iobs,deplist=deplist,doclist=doclist,considlist=considlist,)
 @app.route('/consview')
 def consview():
     consid = request.args.get('consid')
@@ -260,4 +270,4 @@ def consview():
 
     return render_template("consview.html",rows=rows,)
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
