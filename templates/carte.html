@@ -16,7 +16,7 @@
 <center><p >photo</p></center>
 </td>
 <td>
-<center><p><b>Hospito</b></p></center>
+<center><p><b>clinique taher</b></p></center>
 <p>full name : {{rows[0][1]}}</p>
 <p>date of birth : {{rows[0][2]}}</p>
 <p>tel:0 {{rows[0][4]}}</p>
@@ -36,3 +36,29 @@
 </div>
 
 
+
+
+  <script>
+
+    window.onload = function() {
+      const content = document.getElementById('content');
+      const opt = {
+        margin: 1,
+        filename: 'output.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a7', orientation: 'landscape' }
+      };
+	JsBarcode("#barcode", "{{rows[0][0]}}",{
+
+  width: 4,
+  height: 25,
+
+});
+      html2pdf().from(content).set(opt).save();
+
+
+    }
+  </script>
+</body>
+</html>
