@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>L ordanance</title>
+  <script src="{{ url_for('static', filename='html2pdf.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='JsBarcode.all.min.js') }}"></script>
+
+</head>
+<body>
+
+  <!-- Your HTML content here -->
+<a href="/dhome">HOME</a>
+<div id="content" >
+<h3>&nbsp;</h3>
+<table width="98%"  >
+<tr>
+<td>
+<p>nom et prenom :{{rows[0]}}</p>
+</td>
+<td >
+<p>date de naissance : {{rows[1]}}</p>
+
+</td>
+</tr>
+</table>
+</br>
+<table width="100%" height="80%" >
+
+<tr>
+
+<td height="35px">
+{{rows[16]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[17]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[18]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[19]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[20]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[21]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[22]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+
+<tr>
+
+<td height="35px">
+{{rows[23]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[24]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+{{rows[25]}}
+</td>
+<td height="35px">
+
+</td>
+</tr>
+<tr>
+
+<td height="35px">
+<center><svg id="barcode"></svg><center>
+</td>
+<td height="35px">
+&nbsp;
+</td>
+</tr>
+<tr>
+
+<td height="25px">
+le: {{rows[27]}} a {{rows[26]}}
+</td>
+<td >
+
+</td>
+</tr>
+<table>
+
+</div>
+
+
+
+
+  <script>
+
+    window.onload = function() {
+      const content = document.getElementById('content');
+      const opt = {
+        margin: 5,
+        filename: 'output.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a5', orientation: 'portrait' }
+      };
+	JsBarcode("#barcode", "{{rows[2]}}",{
+
+  width: 4,
+  height: 14,
+
+});
+      html2pdf().from(content).set(opt).save();
+
+
+    }
+  </script>
+</body>
+</html>
+

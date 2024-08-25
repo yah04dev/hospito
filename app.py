@@ -278,11 +278,26 @@ def consview():
     cur = con.cursor()
     cur.execute("SELECT * FROM consult WHERE consid=(?)",[consid])
     rows = list(cur.fetchall())
-
+    cur.execute("SELECT * FROM consult WHERE consid=(?)",[consid])
     return render_template("consview.html",rows=rows,)
+@app.route('/analprint')
+def analprint():
+   con = sqlite3.connect("db.db")
+   cur2=con.cursor()
+   coid=request.args.get("coid")
+   cur2.execute("SELECT * FROM consult WHERE consid=(?)",(coid,))
+   rows = list(cur2.fetchone())
+   cur2.execute("SELECT name FROM clients WHERE cid=(?)",(rows[1],))
+   nm = list(cur2.fetchone())
+   cur2.execute("SELECT dob FROM clients WHERE cid=(?)",(rows[1],))
+   dob = list(cur2.fetchone())
+   rows = nm +dob+rows
+   for i in range(3,13) : rows.pop(i)
+   print(rows)
+   return render_template("analprint.html",rows=rows)
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect(url_for("dhome")), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0")
