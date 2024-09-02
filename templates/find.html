@@ -1,111 +1,185 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            border-bottom: 1px solid #007bff;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .btn-custom {
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
+        .table-bordered th, .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .btn-custom {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .card-header {
+                font-size: 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .btn-custom {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .card-header {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<a href="/dhome">HOME</a>
-<form method="GET" action="/findo">
-  <label>id clent</label>
-  <input type="number" name="cid" required >
-  <input type="submit" value="find">
-</form>
-<p>full name :{{name}}</p>
-<p>dob :{{dob}}</p>
-<p>tel :0{{tel}}</p>
-<p>iobs :{{iobs}}</p>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <a href="/dhome" class="btn btn-custom">HOME</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Client Search
+            </div>
+            <div class="card-body">
+                <form method="GET" action="/findo">
+                    <div class="form-group">
+                        <label for="cid">ID Client:</label>
+                        <input type="number" id="cid" name="cid" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Find</button>
+                </form>
+            </div>
+        </div>
 
-</table>
+        <div class="card">
+            <div class="card-header">
+                Client Details
+            </div>
+            <div class="card-body">
+                <p><strong>Full Name:</strong> {{name}}</p>
+                <p><strong>Date of Birth:</strong> {{dob}}</p>
+                <p><strong>Phone:</strong> 0{{tel}}</p>
+                <p><strong>Observations:</strong> {{iobs}}</p>
+                <a href="/cartei?cid={{cid}}" class="btn btn-primary">Imprimer La carte</a>
+                <a href="/facture?cid={{cid}}" class="btn btn-custom btn-block mb-2">facturation</a>
+            </div>
+        </div>
 
-
-<table>
- <thead>
-            <tr>
-     <th>consultations</th>    
- 	        <th>&nbsp;</th>    
-                <th>radios and analysis</th>  
-
-            </tr>
-        </thead>
-<tr>
-<td>
-<table>
-        <thead>
-            <tr>
- 	         	        <th>department</th>    
- 	        <th>date</th>    
-                <th>view</th>  
-            </tr>
-        </thead>
-        <tbody>
-
-{% set len2 = ((considlist|length)+1)|int %}
-{% set deplist = deplist[::-1] %}
-{% set doclist = doclist[::-1] %}
-{% set considlist = considlist[::-1] %}
-
-            {% for i in range(len2) %}
-<tr>
-    {% if deplist[i] and (deplist[i])|length > 0 %}
-    <td>{{ deplist[i][0] }}</td>
-    {% endif %}
-               
-
-
-    {% if doclist[i] and (doclist[i])|length > 0 %}
-    <td>{{ doclist[i][0] }}</td>
-    {% endif %}
-
-    {% if considlist[i] and (considlist[i])|length > 0 %}
-    <td><a href="consview?consid={{ considlist[i][0] }}">view</a></td>
-    {% endif %}
-</tr>
-            {% endfor %}
-
-
-
-        </tbody>
-    </table>
-          
-</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td style="vertical-align: top; text-align: center;">
-<table>
-        <thead>
-            <tr>
- 	        <th>type</th>    
- 	        <th>date</th>    
-                <th>view</th>  
-            </tr>
-        </thead>
-        <tbody>
-{% set len1 = ((analid|length)+1)|int %}
-{% set atype = atype[::-1] %}
-{% set dateofan = dateofan[::-1] %}
-{% set analid = analid[::-1] %}
-
-            {% for i in range(len1) %}
-<tr>
-    {% if atype[i] and (atype[i])|length > 0 %}
-    <td>{{ atype[i][0] }}</td>
-    {% endif %}
-               
-
-
-    {% if dateofan[i] and (dateofan[i])|length > 0 %}
-    <td>{{ dateofan[i][0] }}</td>
-    {% endif %}
-
-    {% if analid[i] and (analid[i])|length > 0 %}
-    <td><a href="cons?consid={{ analid[i][0] }}">view</a></td>
-    {% endif %}
-</tr>
-            {% endfor %}
-
-
-        </tbody>
-    </table>
-</td>
-</tr>
-</table>
+        <div class="card">
+            <div class="card-header">
+                Consultations and Analyses
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Consultations</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    <th>Date</th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set len2 = ((considlist|length)+1)|int %}
+                                {% set deplist = deplist[::-1] %}
+                                {% set doclist = doclist[::-1] %}
+                                {% set considlist = considlist[::-1] %}
+                                {% for i in range(len2) %}
+                                    <tr>
+                                        {% if deplist[i] and (deplist[i])|length > 0 %}
+                                            <td>{{ deplist[i][0] }}</td>
+                                        {% endif %}
+                                        {% if doclist[i] and (doclist[i])|length > 0 %}
+                                            <td>{{ doclist[i][0] }}</td>
+                                        {% endif %}
+                                        {% if considlist[i] and (considlist[i])|length > 0 %}
+                                            <td><a href="consview?consid={{ considlist[i][0] }}">View</a></td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Radios and Analyses</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set len1 = ((analid|length)+1)|int %}
+                                {% set atype = atype[::-1] %}
+                                {% set dateofan = dateofan[::-1] %}
+                                {% set analid = analid[::-1] %}
+                                {% for i in range(len1) %}
+                                    <tr>
+                                        {% if atype[i] and (atype[i])|length > 0 %}
+                                            <td>{{ atype[i][0] }}</td>
+                                        {% endif %}
+                                        {% if dateofan[i] and (dateofan[i])|length > 0 %}
+                                            <td>{{ dateofan[i][0] }}</td>
+                                        {% endif %}
+                                        {% if analid[i] and (analid[i])|length > 0 %}
+                                            <td><a href="cons?consid={{ analid[i][0] }}">View</a></td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

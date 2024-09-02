@@ -1,121 +1,148 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            border-bottom: 1px solid #007bff;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .btn-custom {
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .logout {
+            color: red;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .btn-custom {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .card-header {
+                font-size: 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .btn-custom {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .card-header {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<a href="/dhome">HOME</a>
-<p>consultation ID:{{rows[0][0]}}</p>
-<p>client ID:{{rows[0][1]}}</p>
-<p>doctor ID:{{rows[0][2]}}</p>
-<p>consultatio observation:{{rows[0][3]}}</p>
-<p>Service:{{rows[0][34]}}</p>
-<p>Date de consultation:{{rows[0][35]}}</p>
-<a href="/analprint?coid={{rows[0][0]}}">imprimer les analise requis</a>
-<table>
-<tr>
-<td>
-<table>
-  <tr>
-    <th>Med</th>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-    <th>Dose</th>
-
-  </tr>
-  <tr>
-    <td>{{rows[0][4]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][5]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][6]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][7]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][8]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][9]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][10]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][11]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][12]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][13]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][14]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][15]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][16]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][17]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][18]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][19]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][20]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][21]}}</td>
-  </tr>
-  <tr>
-    <td>{{rows[0][22]}}</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>{{rows[0][23]}}</td>
-  </tr>
-
-</table>
-</td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td style="vertical-align: top; text-align: center;">
-<table>
-<tr><th>Analyses req</th></tr>
-
-<tr>
-<td>{{rows[0][24]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][25]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][26]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][27]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][28]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][29]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][30]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][31]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][32]}}</td>
-</tr>
-<tr>
-<td>{{rows[0][33]}}</td>
-</tr>
-
-</table>
-</td>
-</tr>
-</table>
-
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <a href="/dhome" class="btn btn-custom">HOME</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Consultation Details
+            </div>
+            <div class="card-body">
+                <p><strong>Consultation ID:</strong> {{rows[0][0]}}</p>
+                <p><strong>Client ID:</strong> <a href="findo?cid={{rows[0][1]}}" class="btn btn-primary">{{rows[0][1]}}</a></p>
+                <p><strong>Doctor ID:</strong> {{rows[0][2]}}</p>
+                <p><strong>Consultation Observation:</strong> {{rows[0][3]}}</p>
+                <p><strong>Service:</strong> {{rows[0][34]}}</p>
+                <p><strong>Date de Consultation:</strong> {{rows[0][35]}}</p>
+                <a href="/analprint?coid={{rows[0][0]}}" class="btn btn-custom">Imprimer les Analyses Requis</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Medication
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Med</th>
+                                    <th>Dose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>{{rows[0][4]}}</td><td>{{rows[0][5]}}</td></tr>
+                                <tr><td>{{rows[0][6]}}</td><td>{{rows[0][7]}}</td></tr>
+                                <tr><td>{{rows[0][8]}}</td><td>{{rows[0][9]}}</td></tr>
+                                <tr><td>{{rows[0][10]}}</td><td>{{rows[0][11]}}</td></tr>
+                                <tr><td>{{rows[0][12]}}</td><td>{{rows[0][13]}}</td></tr>
+                                <tr><td>{{rows[0][14]}}</td><td>{{rows[0][15]}}</td></tr>
+                                <tr><td>{{rows[0][16]}}</td><td>{{rows[0][17]}}</td></tr>
+                                <tr><td>{{rows[0][18]}}</td><td>{{rows[0][19]}}</td></tr>
+                                <tr><td>{{rows[0][20]}}</td><td>{{rows[0][21]}}</td></tr>
+                                <tr><td>{{rows[0][22]}}</td><td>{{rows[0][23]}}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Analyses Required
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr><td>{{rows[0][24]}}</td></tr>
+                                <tr><td>{{rows[0][25]}}</td></tr>
+                                <tr><td>{{rows[0][26]}}</td></tr>
+                                <tr><td>{{rows[0][27]}}</td></tr>
+                                <tr><td>{{rows[0][28]}}</td></tr>
+                                <tr><td>{{rows[0][29]}}</td></tr>
+                                <tr><td>{{rows[0][30]}}</td></tr>
+                                <tr><td>{{rows[0][31]}}</td></tr>
+                                <tr><td>{{rows[0][32]}}</td></tr>
+                                <tr><td>{{rows[0][33]}}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

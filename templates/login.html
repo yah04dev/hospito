@@ -8,18 +8,35 @@
 
 </head>
 <body>
+ <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+
+</style>
 </br>
 </br>
 </br>
 </br>
 <center>
-<h4>login</h4>
-  <form action="/checko" method="GET">
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"><h4>login</h4></div>
+                    <div class="card-body">
+
+  <form action="/checko" class="form-group" method="GET">
+    <p><b style="color:red;">{{err}}</b></p>
     <label for="cid">id:</label>
-    <input type="text" id="sid" name="sid"><br><br>
+    <input type="text" id="sid"  name="sid"><br><br>
     <label for="cid">password:</label>
-    <input type="password" id="pass" name="pass"><br><br>
-    <input type="submit" value="Submit">
+    <input type="password" id="pass"  name="pass"><br><br>
+    <input type="submit" class="btn btn-primary mt-2" value="Login">
+</div>
+</div>
+</div>
 </form>
 </center>
 </body>

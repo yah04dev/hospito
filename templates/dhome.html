@@ -1,52 +1,115 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-custom {
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+        }
+        .logout {
+            color: red;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .btn-custom {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .card-header {
+                font-size: 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .btn-custom {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .card-header {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-</br>
-</br>
-<center>
-<table>
-<tr>
-<td >
-  <a href="/consultation"><h5>consultation</h5></a><br><br>
-  <a href="/addar"><h5>ajouter analyse ou radio</h5></a><br><br>
-  <a href="/addcl"><h5>ajouter un client</h5></a><br><br>
-  <a href="/addstaff"><h5>ajouter un staff</h5></a><br><br>
-  <a href="/"><h5 style="color:red;">logout</h5></a><br><br>
-</td>
-<td>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</td>
-<td style="border: 5px solid black;">
- <center> <h4>trouver un client :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></center>
-</br>
-</br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Main Actions</div>
+                    <div class="card-body text-center">
+                        <a href="/consultation" class="btn btn-custom btn-block mb-2">Consultation</a>
+                        <a href="/addar" class="btn btn-custom btn-block mb-2">Ajouter Analyse ou Radio</a>
+                        <a href="/addcl" class="btn btn-custom btn-block mb-2">Ajouter un Client</a>
+                        <a href="/addstaff" class="btn btn-custom btn-block mb-2">Ajouter un Staff</a>
 
-  <form action="/findo" method="GET">
-    <label for="cid">id:</label>
-
-    <input type="text" id="cid" name="cid">
-
-  <center>  <input type="submit" value="Submit"></center>
-</form>
-
-  <form action="/consview" method="GET">
-    <label for="consid">cons id:</label>
-
-    <input type="text" id="consid" name="consid">
-
-  <center>  <input type="submit" value="Submit"></center>
-</form>
-  
-</td>
-</tr>
-</table>
-</center>
-
-
-
+                       
+                        <a href="/" class="btn btn-danger btn-block ">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Trouver un Client</div>
+                    <div class="card-body">
+                        <form action="/findo" method="GET" class="form-group">
+                           <p><b style="color:red;">{{err}}</b></p>
+                            <label for="cid" class="form-label">ID:</label>
+                            <input type="number" id="cid" name="cid" class="form-control">
+                            <center><button type="submit" class="btn btn-custom mt-2">Submit</button></center>
+                        </form>
+                        <form action="/consview" method="GET" class="form-group mt-4">
+                            <label for="consid" class="form-label">Cons ID:</label>
+                            <input type="number" id="consid" name="consid" class="form-control">
+                            <center><button type="submit" class="btn btn-custom mt-2">Submit</button></center>
+                        </form>
+                        <form action="/cpn" method="GET" class="form-group mt-4">
+                            <label for="consid" class="form-label">Client nom complet:</label>
+                            <input type="text" id="name" name="name" class="form-control">
+                            <center><button type="submit" class="btn btn-custom mt-2">Submit</button></center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

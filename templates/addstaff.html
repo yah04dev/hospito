@@ -1,68 +1,133 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}" defer></script>
+    <title>Insertion Form</title>
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-row {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-<a href="/dhome">HOME</a>
-<form method="get" action="/sinsertion">
+    <div class="container mt-4">
+        <a href="/dhome" class="btn btn-primary mb-3">HOME</a>
 
-  <label>full name</label>
-  <input type="text" name="ename" required >
-</br>
-  <label>DOB</label>
-  <input type="date" name="edob" required>
-</br>
-  <label>Ntel</label>
-  <input type="number" name="etel" >
-</br>
-  <label>type</label>
-<select  name="etype">
-  <option value="dr">dr</option>
-  <option value="grh" >grh</option>
-  <option value="laborat">laboratoiriste</option>
-  <option value="radiol" >radiologue</option>
-
-</select>
-</br>
-<label>sous type</label>
-  <input type="text" name="esubtype"  >
-</br>
-<label>date of join</label>
-  <input type="date" name="edoj" >
-</br>
-
-  <label>Numero d assurance</label>
-  <input type="number" name="nsc" >
-</br>
-  <label>Numero didentite national</label>
-  <input type="number" name="nid" >
-</br>
-<label>adress</label>
-  <input type="text" name="adress"  >
-</br>
- <label>Rhesus</label>
-<select id="monselect" name="rh">
-  <option value="a+">A+</option>
-  <option value="a-" >A-</option>
-  <option value="o+">O+</option>
-  <option value="o-" >O-</option>
-  <option value="b+">B+</option>
-  <option value="b-" >B-</option>
-  <option value="ab+">AB+</option>
-  <option value="ab-" >AB-</option>
-</select>
-</br>
-<label>motdepass</label>
-  <input type="mtp" name="mtp"  >
-</br>
-  
-</br>
-  <input type="submit" value="insert">
+            <!-- Full Name and Date of Birth -->
+            <div class="row mb-3">
+ 
+                    <div class="form-group">
+<form method="get" action="/efindo" class="col-md-6">
+                        <label for="eid">eid:</label>
+                        <input type="text" id="eid" name="eid" required class="form-control">
+                        <button type="submit" class="btn btn-primary form-control">chercher</button>
 </form>
 
+                <div class="col-md-6">
+
+        <form method="get" action="/sinsertion">
+            <!-- Full Name and Date of Birth -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ename">Full Name:</label>
+                        <input type="text" id="ename" name="ename" required class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="edob">Date of Birth:</label>
+                        <input type="date" id="edob" name="edob" required class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telephone and Date of Joining -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="etel">Telephone:</label>
+                        <input type="tel" id="etel" name="etel" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="edoj">Date of Joining:</label>
+                        <input type="date" id="edoj" name="edoj" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type, Sub Type, and Rhesus -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="etype">Type:</label>
+                        <select id="etype" name="etype" class="form-control">
+                            <option value="dr">Dr</option>
+                            <option value="grh">GRH</option>
+                            <option value="laborat">Laboratoire</option>
+                            <option value="radiol">Radiologue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="esubtype">Sub Type:</label>
+                        <input type="text" id="esubtype" name="esubtype" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="rh">Rhesus:</label>
+                        <select id="rh" name="rh" class="form-control">
+                            <option value="a+">A+</option>
+                            <option value="a-">A-</option>
+                            <option value="o+">O+</option>
+                            <option value="o-">O-</option>
+                            <option value="b+">B+</option>
+                            <option value="b-">B-</option>
+                            <option value="ab+">AB+</option>
+                            <option value="ab-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Fields -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nsc">Insurance Number:</label>
+                        <input type="number" id="nsc" name="nsc" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nid">National Identity Number:</label>
+                        <input type="number" id="nid" name="nid" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="adress">Address:</label>
+                <input type="text" id="adress" name="adress" class="form-control">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="mtp">Password:</label>
+                <input type="password" id="mtp" name="mtp" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Insert</button>
+        </form>
+    </div>
 </body>
 </html>

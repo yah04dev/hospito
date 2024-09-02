@@ -1,44 +1,68 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}" defer></script>
+    <title>Form</title>
 </head>
 <body>
-<a href="/dhome">HOME</a>
-<form method="get" action="/insertion">
-  <label>by:</label>
-  <input type="text" name="eid" value="{{EID}}" required >
-</br>
-  <label>full name</label>
-  <input type="text" name="name" required >
-</br>
-  <label>DOB</label>
-  <input type="date" name="dob" required>
-</br>
-  <label>Ntel</label>
-  <input type="number" name="tel" >
-</br>
-  <label>Rhesus</label>
-<select id="monselect" name="rh">
-  <option value="a+">A+</option>
-  <option value="a-" >A-</option>
-  <option value="o+">O+</option>
-  <option value="o-" >O-</option>
-  <option value="b+">B+</option>
-  <option value="b-" >B-</option>
-  <option value="ab+">AB+</option>
-  <option value="ab-" >AB-</option>
-</select>
-</br>
-  <p>important details</p>
+    <div class="container mt-4">
+        <a href="/dhome" class="btn btn-primary mb-3">HOME</a>
 
-  <textarea name="iobs" required rows="10" cols="70"></textarea>
-</br>
-  <input type="submit" value="insert">
-</form>
+        <form method="get" action="/insertion">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="eid">By:</label>
+                        <input type="text" id="eid" name="eid" value="{{EID}}" readonly class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required class="form-control">
+                    </div>
+                </div>
+            </div>
 
+            <div class="form-group mb-3">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required class="form-control">
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="tel">Telephone:</label>
+                        <input type="tel" id="tel" name="tel" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="rh">Rhesus:</label>
+                        <select id="rh" name="rh" class="form-control">
+                            <option value="a+">A+</option>
+                            <option value="a-">A-</option>
+                            <option value="o+">O+</option>
+                            <option value="o-">O-</option>
+                            <option value="b+">B+</option>
+                            <option value="b-">B-</option>
+                            <option value="ab+">AB+</option>
+                            <option value="ab-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="iobs">Important Details:</label>
+                <textarea id="iobs" name="iobs" required rows="10" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Insert</button>
+        </form>
+    </div>
 </body>
 </html>
